@@ -1,0 +1,26 @@
+.farmer-view-box {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 1rem;
+  justify-content: start;
+  text-align: left;
+}
+
+.farmer-view-box-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  width: 100%;
+}
+
+.farmer-view-box-content-item {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  width: 100%;
+}
+
+.farmer-view-box-toolbar {
+  align-self: start;
+}

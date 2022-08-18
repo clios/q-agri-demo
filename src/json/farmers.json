@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "name": "NATHAN FLORENDO",
+    "birthday": "1973-11-05T06:11:56.926268Z",
+    "sex": "male",
+    "age": 25,
+    "civil_status": "single",
+    "spouse_name": "",
+    "no_of_children": null,
+    "name_of_children": "",
+    "address_municipality": "SAGUDAY",
+    "address_barangay": "DIBUL",
+    "address_purok": "02",
+    "created_at": "2021-11-05T06:11:56.926268Z",
+    "updated_at": "2021-11-05T06:11:56.926268Z",
+    "last_updated_by": "CLIEMTOR B. FABROS"
+  },
+  {
+    "id": 2,
+    "name": "MATEO BIKAN",
+    "birthday": "1973-11-05T06:11:56.926268Z",
+    "sex": "male",
+    "age": 25,
+    "civil_status": "single",
+    "spouse_name": "",
+    "no_of_children": null,
+    "name_of_children": "",
+    "address_municipality": "CABARROGUIS",
+    "address_barangay": "ZAMORA",
+    "address_purok": "02",
+    "created_at": "2021-11-05T06:11:56.926268Z",
+    "updated_at": "2021-11-05T06:11:56.926268Z",
+    "last_updated_by": "CLIEMTOR B. FABROS"
+  },
+  {
+    "id": 3,
+    "name": "MICH FRIGEN",
+    "birthday": "1973-11-05T06:11:56.926268Z",
+    "sex": "female",
+    "age": 25,
+    "civil_status": "single",
+    "spouse_name": "",
+    "no_of_children": null,
+    "name_of_children": "",
+    "address_municipality": "DIFFUN",
+    "address_barangay": "CAJEL",
+    "address_purok": "02",
+    "created_at": "2021-11-05T06:11:56.926268Z",
+    "updated_at": "2021-11-05T06:11:56.926268Z",
+    "last_updated_by": "CLIEMTOR B. FABROS"
+  }
+]

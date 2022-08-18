@@ -1,0 +1,46 @@
+body {
+  background-color: hsl(195, 10%, 10%);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.map-container {
+  height: calc(100vh - 11rem);
+  width: 100%;
+}
+
+.map-container-family {
+  height: calc(100vh - 7rem);
+  width: 100%;
+}
+
+.map-container-family-update {
+  height: calc(100vh - 20.5rem);
+  width: 100%;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
