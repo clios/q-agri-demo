@@ -8,6 +8,7 @@ import Field from '../components/Field'
 import Form from '../components/Form'
 import FormFooter from '../components/FormFooter'
 import FormRow from '../components/FormRow'
+import Help from '../Help'
 import Input from '../components/Input'
 import React from 'react'
 import SectionHeader from '../components/SectionHeader'
@@ -19,6 +20,8 @@ function FarmParcelNew() {
   // INPUT STATE
   const [address_municipal, setAddressMunicipal] = React.useState('')
   const [address_barangay, setAddressBarangay] = React.useState('')
+  const [address_latitude, setAddressLatitude] = React.useState('')
+  const [address_longitude, setAddressLongitude] = React.useState('')
 
   function submitForm(e) {
     e.preventDefault()
@@ -43,25 +46,83 @@ function FarmParcelNew() {
             </Select>
           </Field>
         </FormRow>
-        <SectionHeader title="Rice and/or Corn Field Area (square meter)" />
+        <SectionHeader title="Address" />
         <FormRow>
-          <Field label="Rice Field">
+          <Field label="Region">
+            <Select disabled>
+              <option>02</option>
+            </Select>
+          </Field>
+          <Field label="Province">
+            <Select disabled>
+              <option>Quirino</option>
+            </Select>
+          </Field>
+          <Field label="Municipality">
+            <Select
+              onChange={(e) => {
+                setAddressBarangay('')
+                setAddressMunicipal(e.target.value)
+              }}
+              value={address_municipal}>
+              <option value=""></option>
+              {Address.Municipalities('02', 'QUIRINO').map((item, index) => (
+                <option key={index} value={item}>
+                  {item}
+                </option>
+              ))}
+            </Select>
+          </Field>
+          <Field label="Barangay">
+            <Select onChange={(e) => setAddressBarangay(e.target.value)} value={address_barangay}>
+              <option value=""></option>
+              {Address.Barangays('02', 'QUIRINO', address_municipal).map((item, index) => (
+                <option key={index} value={item}>
+                  {item}
+                </option>
+              ))}
+            </Select>
+          </Field>
+          <Field label="Purok">
+            <Input type="text" size={10} />
+          </Field>
+          <Field error={Help.address_latitude} label="Latitude" status={status}>
             <Cleave
               className="input"
-              size={5}
+              onChange={(e) => setAddressLatitude(e.target.value)}
+              size={20}
+              type="text"
               options={{
                 numeral: true,
-                numeralIntegerScale: 5,
-                numeralDecimalScale: 3,
-                numeralPositiveOnly: true,
+                numeralIntegerScale: 3,
+                numeralDecimalScale: 15,
                 numeralThousandsGroupStyle: 'none'
               }}
+              value={address_latitude}
             />
           </Field>
-          <Field label="Corn Field">
+          <Field error={Help.address_longitude} label="Longitude" status={status}>
             <Cleave
               className="input"
-              size={5}
+              onChange={(e) => setAddressLongitude(e.target.value)}
+              size={20}
+              type="text"
+              options={{
+                numeral: true,
+                numeralIntegerScale: 3,
+                numeralDecimalScale: 15,
+                numeralThousandsGroupStyle: 'none'
+              }}
+              value={address_longitude}
+            />
+          </Field>
+        </FormRow>
+        <SectionHeader title="Rice Field" />
+        <FormRow>
+          <Field label="Total Area in Hectare">
+            <Cleave
+              className="input"
+              size={13}
               options={{
                 numeral: true,
                 numeralIntegerScale: 5,
@@ -72,103 +133,12 @@ function FarmParcelNew() {
             />
           </Field>
         </FormRow>
-        <SectionHeader title="High Value Crops Area (square meter)" />
+        <SectionHeader title="Corn Field" />
         <FormRow>
-          <Field label="Vegetables">
+          <Field label="Total Area in Hectare">
             <Cleave
               className="input"
-              size={5}
-              options={{
-                numeral: true,
-                numeralIntegerScale: 5,
-                numeralDecimalScale: 3,
-                numeralPositiveOnly: true,
-                numeralThousandsGroupStyle: 'none'
-              }}
-            />
-          </Field>
-          <Field label="Fruit Trees">
-            <Cleave
-              className="input"
-              size={5}
-              options={{
-                numeral: true,
-                numeralIntegerScale: 5,
-                numeralDecimalScale: 3,
-                numeralPositiveOnly: true,
-                numeralThousandsGroupStyle: 'none'
-              }}
-            />
-          </Field>
-          <Field label="Banana">
-            <Cleave
-              className="input"
-              size={5}
-              options={{
-                numeral: true,
-                numeralIntegerScale: 5,
-                numeralDecimalScale: 3,
-                numeralPositiveOnly: true,
-                numeralThousandsGroupStyle: 'none'
-              }}
-            />
-          </Field>
-          <Field label="Cassava">
-            <Cleave
-              className="input"
-              size={5}
-              options={{
-                numeral: true,
-                numeralIntegerScale: 5,
-                numeralDecimalScale: 3,
-                numeralPositiveOnly: true,
-                numeralThousandsGroupStyle: 'none'
-              }}
-            />
-          </Field>
-          <Field label="Pineapple">
-            <Cleave
-              className="input"
-              size={5}
-              options={{
-                numeral: true,
-                numeralIntegerScale: 5,
-                numeralDecimalScale: 3,
-                numeralPositiveOnly: true,
-                numeralThousandsGroupStyle: 'none'
-              }}
-            />
-          </Field>
-          <Field label="Coffee">
-            <Cleave
-              className="input"
-              size={5}
-              options={{
-                numeral: true,
-                numeralIntegerScale: 5,
-                numeralDecimalScale: 3,
-                numeralPositiveOnly: true,
-                numeralThousandsGroupStyle: 'none'
-              }}
-            />
-          </Field>
-          <Field label="Cacao">
-            <Cleave
-              className="input"
-              size={5}
-              options={{
-                numeral: true,
-                numeralIntegerScale: 5,
-                numeralDecimalScale: 3,
-                numeralPositiveOnly: true,
-                numeralThousandsGroupStyle: 'none'
-              }}
-            />
-          </Field>
-          <Field label="Other">
-            <Cleave
-              className="input"
-              size={5}
+              size={13}
               options={{
                 numeral: true,
                 numeralIntegerScale: 5,
@@ -179,7 +149,35 @@ function FarmParcelNew() {
             />
           </Field>
         </FormRow>
-        <SectionHeader title="Livestock (total head)" />
+        <SectionHeader title="High Value Crops" />
+        <FormRow>
+          <Field label="Variety">
+            <Select>
+              <option></option>
+              <option>Banana</option>
+              <option>Cacao</option>
+              <option>Coffee</option>
+              <option>Fruit Tree</option>
+              <option>Root Crops</option>
+              <option>Spices</option>
+              <option>Vegetables</option>
+            </Select>
+          </Field>
+          <Field label="Total Area in Hectare">
+            <Cleave
+              className="input"
+              size={13}
+              options={{
+                numeral: true,
+                numeralIntegerScale: 5,
+                numeralDecimalScale: 3,
+                numeralPositiveOnly: true,
+                numeralThousandsGroupStyle: 'none'
+              }}
+            />
+          </Field>
+        </FormRow>
+        <SectionHeader title="Livestock Total Head" />
         <FormRow>
           <Field label="Goat">
             <Cleave
@@ -246,21 +244,8 @@ function FarmParcelNew() {
               }}
             />
           </Field>
-          <Field label="Other">
-            <Cleave
-              className="input"
-              size={5}
-              options={{
-                numeral: true,
-                numeralIntegerScale: 5,
-                numeralDecimalScale: 3,
-                numeralPositiveOnly: true,
-                numeralThousandsGroupStyle: 'none'
-              }}
-            />
-          </Field>
         </FormRow>
-        <SectionHeader title="Poultry (total head)" />
+        <SectionHeader title="Poultry Total Head" />
         <FormRow>
           <Field label="Chicken">
             <Cleave
@@ -314,23 +299,10 @@ function FarmParcelNew() {
               }}
             />
           </Field>
-          <Field label="Other">
-            <Cleave
-              className="input"
-              size={5}
-              options={{
-                numeral: true,
-                numeralIntegerScale: 5,
-                numeralDecimalScale: 3,
-                numeralPositiveOnly: true,
-                numeralThousandsGroupStyle: 'none'
-              }}
-            />
-          </Field>
         </FormRow>
-        <SectionHeader title="Fishery" />
+        <SectionHeader title="Fish Pond" />
         <FormRow>
-          <Field label="Fish Pond Area (square meter)">
+          <Field label="Total Area in Square Meter">
             <Cleave
               className="input"
               options={{
@@ -355,50 +327,10 @@ function FarmParcelNew() {
             />
           </Field>
         </FormRow>
-        <SectionHeader title="Address" />
-        <FormRow>
-          <Field label="Region">
-            <Select disabled>
-              <option>02</option>
-            </Select>
-          </Field>
-          <Field label="Province">
-            <Select disabled>
-              <option>Quirino</option>
-            </Select>
-          </Field>
-          <Field label="Municipality">
-            <Select
-              onChange={(e) => {
-                setAddressBarangay('')
-                setAddressMunicipal(e.target.value)
-              }}
-              value={address_municipal}>
-              <option value=""></option>
-              {Address.Municipalities('02', 'QUIRINO').map((item, index) => (
-                <option key={index} value={item}>
-                  {item}
-                </option>
-              ))}
-            </Select>
-          </Field>
-          <Field label="Barangay">
-            <Select onChange={(e) => setAddressBarangay(e.target.value)} value={address_barangay}>
-              <option value=""></option>
-              {Address.Barangays('02', 'QUIRINO', address_municipal).map((item, index) => (
-                <option key={index} value={item}>
-                  {item}
-                </option>
-              ))}
-            </Select>
-          </Field>
-          <Field label="Purok">
-            <Input type="text" />
-          </Field>
-        </FormRow>
+
         <FormFooter>
           <Button onClick={submitForm} title="Create farm parcel" type="submit">
-            Create Farm Parcel Record
+            Create Farm Record
           </Button>
         </FormFooter>
       </Form>

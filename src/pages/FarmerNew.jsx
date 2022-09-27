@@ -35,6 +35,9 @@ function FarmerNew() {
           </ButtonIcon>
         </SectionHeader>
         <FormRow>
+          <Field label="Date Recorded">
+            <Input type="date" />
+          </Field>
           <Field label="Employment">
             <Select>
               <option value="owner">OWNER</option>
