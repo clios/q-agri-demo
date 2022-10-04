@@ -8,12 +8,14 @@ function Fishery() {
   return (
     <div className="fishery">
       <Box>
-        <Text orange>Total Square Meter Area</Text>
+        <Text orange>Total Area</Text>
         <Text two>82,192</Text>
+        <Text>Square Meter</Text>
       </Box>
       <Box>
-        <Text orange>Total Fingerlings</Text>
+        <Text orange>Qty. of Fingerlings</Text>
         <Text two>8,192,927</Text>
+        <Text>Pieces</Text>
       </Box>
     </div>
   )

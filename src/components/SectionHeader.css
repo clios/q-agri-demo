@@ -3,6 +3,11 @@
   padding: 2rem 2rem 0.75rem 2rem;
 }
 
+.section-header-big-title {
+  font-size: 2rem;
+  align-self: center;
+}
+
 .section-header-title {
   font-size: 1.3rem;
   align-self: center;

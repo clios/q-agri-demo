@@ -1,4 +1,6 @@
 .livestock {
-  display: flex;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 1rem;
 }

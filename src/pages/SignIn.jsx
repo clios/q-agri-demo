@@ -17,7 +17,7 @@ function SignIn() {
       <div className="sign-in-container">
         <div className="sign-in-content bg-dark">
           <img className="sign-in-image" src={require('../assets/sign_in_bg.svg')} alt="poster" />
-          <Form className="sign-in-form" onSubmit={() => navigate('/farmers/dashboard', { replace: true })}>
+          <form className="sign-in-form" onSubmit={() => navigate('/farmers/dashboard', { replace: true })}>
             <div className="sign-in-title text-orange">Q-Agri MIS</div>
             <p className="sign-in-note">By signing in, you agree to our Terms of Use and Privacy Policy.</p>
             <Field label="Email">
@@ -34,7 +34,7 @@ function SignIn() {
             <Button className="sign-in-button" type="submit">
               Sign In
             </Button>
-          </Form>
+          </form>
         </div>
         <div className="logo-container">
           <img className="sign-in-logo" src={require('../assets/pgq_logo.png')} alt="logo" />

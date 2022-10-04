@@ -9,6 +9,7 @@ import Field from '../components/Field'
 import FormRow from '../components/FormRow'
 import Help from '../Help'
 import Input from '../components/Input'
+import PaperView from '../components/PaperView'
 import React from 'react'
 import SearchBox from '../components/SearchBox'
 import Select from '../components/Select'
@@ -104,16 +105,18 @@ function FarmerList() {
           </Field>
         </FormRow>
       </SearchBox>
-      <Table status="success" emptyLabel="No farmers found" headers={['Index', 'Name', 'Municipality', 'Barangay'].filter(Boolean)} total={1}>
-        {Farmers.map((item, index) => (
-          <tr key={index} onClick={() => navigate(`/farmers/records/${item.id}`)} title="Click to view more details">
-            <td>{Help.findTableIndex(limit, page, index)}</td>
-            <td>{item.name}</td>
-            <td>{item.address_municipality}</td>
-            <td>{item.address_barangay}</td>
-          </tr>
-        ))}
-      </Table>
+      <PaperView>
+        <Table status="success" emptyLabel="No farmers found" headers={['Index', 'Name', 'Municipality', 'Barangay'].filter(Boolean)} total={1}>
+          {Farmers.map((item, index) => (
+            <tr key={index} onClick={() => navigate(`/farmers/records/${item.id}`)} title="Click to view more details">
+              <td>{Help.findTableIndex(limit, page, index)}</td>
+              <td>{item.name}</td>
+              <td>{item.address_municipality}</td>
+              <td>{item.address_barangay}</td>
+            </tr>
+          ))}
+        </Table>
+      </PaperView>
       <TableFooter page={page} limit={limit} total={1} onUpdatePage={(data) => setPage(data)} onUpdateLimit={(data) => setLimit(data)} />
     </FadeAnimation>
   )

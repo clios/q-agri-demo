@@ -19,3 +19,9 @@
   color: inherit;
   cursor: default;
 }
+
+.table-custom.no-click tbody tr:hover {
+  background-color: #ffffff;
+  color: #22282a;
+  cursor: default;
+}

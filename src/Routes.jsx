@@ -5,6 +5,7 @@ import FarmParcelNew from './pages/FarmParcelNew'
 import FarmerDashboard from './pages/FarmerDashboard'
 import FarmerEdit from './pages/FarmerEdit'
 import FarmerList from './pages/FarmerList'
+import FarmerMap from './pages/FarmerMap'
 import FarmerNew from './pages/FarmerNew'
 import FarmerTabs from './layouts/FarmerTabs'
 import FarmerView from './pages/FarmerView'
@@ -38,6 +39,7 @@ function Routes() {
           <FarmerNew path="/records/new" />
           <FarmerView path="/records/:farmer_id" />
           <FarmerEdit path="/records/:farmer_id/edit" />
+          <FarmerMap path="/map/farmers" />
           <FarmParcelNew path="/records/:farmer_id/new-farm-parcel" />
           <FarmParcelEdit path="/records/:farmer_id/edit-farm-parcel/:farm_parcel_id" />
         </FarmerTabs>

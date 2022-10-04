@@ -29,27 +29,22 @@ function FarmerNew() {
   return (
     <FadeAnimation>
       <Form>
-        <SectionHeader title="Personal Information">
+        <SectionHeader bigTitle="New Farmer Form">
           <ButtonIcon onClick={() => navigate('/farmers/records')} title="Close this form">
             <Close20 />
           </ButtonIcon>
         </SectionHeader>
+        <SectionHeader title="Date Recorded" />
         <FormRow>
-          <Field label="Date Recorded">
+          <Field>
             <Input type="date" />
           </Field>
-          <Field label="Employment">
-            <Select>
-              <option value="owner">OWNER</option>
-              <option value="tenant">TENANT</option>
-              <option value="laborer">LABORER</option>
-            </Select>
-          </Field>
+        </FormRow>
+        <SectionHeader title="I. Personal Information" />
+        <FormRow>
           <Field label="Name">
             <Input size={30} type="text" />
           </Field>
-        </FormRow>
-        <FormRow>
           <Field label="Birthday">
             <Input type="date" />
           </Field>
@@ -71,6 +66,13 @@ function FarmerNew() {
               <option value="separated">SEPARATED</option>
             </Select>
           </Field>
+          <Field label="Main Livelihood">
+            <Select>
+              <option value="owner">OWNER</option>
+              <option value="tenant">TENANT</option>
+              <option value="laborer">LABORER</option>
+            </Select>
+          </Field>
         </FormRow>
         <FormRow>
           <Field label="Spouse Name">
@@ -79,12 +81,12 @@ function FarmerNew() {
           <Field label="Total Children">
             <Cleave
               className="input"
-              size={7}
+              size={10}
               options={{ numeral: true, numeralIntegerScale: 3, numeralDecimalScale: 0, numeralPositiveOnly: true }}
             />
           </Field>
         </FormRow>
-        <SectionHeader title="Residential Address" />
+        <SectionHeader title="II. Address and Coordinates" />
         <FormRow>
           <Field label="Region">
             <Select disabled>
@@ -123,6 +125,14 @@ function FarmerNew() {
           </Field>
           <Field label="Purok">
             <Input size={5} type="text" />
+          </Field>
+        </FormRow>
+        <FormRow>
+          <Field label="Latitude">
+            <Input size={15} type="text" />
+          </Field>
+          <Field label="Longitude">
+            <Input size={15} type="text" />
           </Field>
         </FormRow>
         <FormFooter>

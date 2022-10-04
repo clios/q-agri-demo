@@ -1,4 +1,4 @@
-import './Livestock.css'
+import './RiceArea.css'
 
 import { VictoryPie, VictoryTooltip } from 'victory'
 
@@ -7,77 +7,62 @@ import React from 'react'
 import Table from './Table'
 import Text from './Text'
 
-function Livestock() {
+function RiceArea() {
   return (
-    <div className="livestock">
+    <div className="rice-area">
       <div>
         <VictoryPie
           height={250}
           labels={() => null}
           padding={0}
           innerRadius={50}
-          colorScale={['#DF2020', '#DF9C20', '#DFDF20', '#20DF20', '#20A8DF']}
           labels={({ datum }) => `${datum.x}: ${datum.y}`}
           labelComponent={
             <VictoryTooltip cornerRadius={0} flyoutPadding={{ left: 20, right: 20, bottom: 10, top: 10 }} style={{ fontSize: '16px' }} />
           }
+          colorScale={['#DF2020', '#DF9C20', '#DFDF20']}
           data={[
-            { x: 'Cattle', y: 61 },
-            { x: 'Carabao', y: 26 },
-            { x: 'Pig', y: 37 },
-            { x: 'Goat', y: 57 },
-            { x: 'Sheep', y: 23 }
+            { x: 'Irrigated', y: 41 },
+            { x: 'Rainfed', y: 59 },
+            { x: 'Upland', y: 17 }
           ]}
         />
       </div>
       <div>
-        <Table className="no-click" headers={['Legend', 'Livestock', 'Head']}>
+        <Table className="no-click" headers={['Legend', 'Variety', 'Area']}>
           <tr>
             <td>
               <div className="box-red" />
             </td>
-            <td>Cattle</td>
-            <td>61</td>
+            <td>Irrigated</td>
+            <td>41</td>
           </tr>
           <tr>
             <td>
               <div className="box-orange" />
             </td>
-            <td>Carabao</td>
-            <td>26</td>
+            <td>Rainfed</td>
+            <td>59</td>
           </tr>
           <tr>
             <td>
               <div className="box-yellow" />
             </td>
-            <td>Pig</td>
-            <td>37</td>
-          </tr>
-          <tr>
-            <td>
-              <div className="box-green" />
-            </td>
-            <td>Goat</td>
-            <td>57</td>
-          </tr>
-          <tr>
-            <td>
-              <div className="box-blue" />
-            </td>
-            <td>Sheep</td>
-            <td>23</td>
+            <td>Upland</td>
+            <td>17</td>
           </tr>
         </Table>
       </div>
       <div>
         <Box>
-          <Text orange>Total Livestock</Text>
-          <Text two>195</Text>
-          <Text>Heads</Text>
+          <Text orange>Rice Field</Text>
+          <Text>Total Area</Text>
+          <Text two>281</Text>
+          <Text>Hectares</Text>
         </Box>
       </div>
     </div>
   )
 }
 
-export default Livestock
+export default RiceArea

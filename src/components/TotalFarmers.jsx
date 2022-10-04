@@ -1,9 +1,10 @@
 import './TotalFarmers.css'
 
+import { VictoryPie, VictoryTooltip } from 'victory'
+
 import Box from './Box'
 import React from 'react'
 import Text from './Text'
-import { VictoryPie } from 'victory'
 
 function TotalFarmers() {
   return (
@@ -22,6 +23,10 @@ function TotalFarmers() {
       <Box>
         <VictoryPie
           colorScale={['#DFDF20', '#20A8DF']}
+          labels={({ datum }) => `${datum.x}: ${datum.y}`}
+          labelComponent={
+            <VictoryTooltip cornerRadius={0} flyoutPadding={{ left: 20, right: 20, bottom: 10, top: 10 }} style={{ fontSize: '16px' }} />
+          }
           data={[
             { x: 'Female', y: 41 },
             { x: 'Male', y: 59 }

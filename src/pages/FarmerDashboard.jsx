@@ -2,18 +2,26 @@ import Address from '../Address'
 import Age from '../components/Age'
 import ButtonIcon from '../components/ButtonIcon'
 import CivilStatus from '../components/CivilStatus'
+import Corn from '../components/Corn'
+import CornArea from '../components/CornArea'
 import DashboardContent from '../components/DashboardContent'
 import DashboardItem from '../components/DashboardItem'
 import DashboardToolbar from '../components/DashboardToolbar'
 import FadeAnimation from '../components/FadeAnimation'
 import Field from '../components/Field'
 import Fishery from '../components/Fishery'
+import HVC from '../components/HVC'
 import HighValueCrops from '../components/HighValueCrops'
+import HighValueCropsSubVariety from '../components/HighValueCropsSubVariety'
 import Livestock from '../components/Livestock'
+import PopulationPerAge from '../components/PopulationPerAge'
+import PopulationPerCivilStatus from '../components/PopulationPerCivilStatus'
 import Poultry from '../components/Poultry'
 import React from 'react'
 import { Reset20 } from '@carbon/icons-react'
+import Rice from '../components/Rice'
 import RiceAndCorn from '../components/RiceAndCorn'
+import RiceArea from '../components/RiceArea'
 import Select from '../components/Select'
 import TotalFarmers from '../components/TotalFarmers'
 import { toast } from 'react-toastify'
@@ -79,25 +87,37 @@ function FarmerDashboard() {
 
       <DashboardContent>
         <DashboardItem title="Population Per Age">
-          <Age />
+          <PopulationPerAge />
         </DashboardItem>
       </DashboardContent>
 
       <DashboardContent>
         <DashboardItem title="Population Per Civil Status">
-          <CivilStatus />
+          <PopulationPerCivilStatus />
         </DashboardItem>
       </DashboardContent>
 
       <DashboardContent>
-        <DashboardItem title="Rice And Corn">
-          <RiceAndCorn />
+        <DashboardItem title="Rice Area">
+          <RiceArea />
         </DashboardItem>
       </DashboardContent>
 
       <DashboardContent>
-        <DashboardItem title="High Value Crops">
+        <DashboardItem title="Corn Area">
+          <CornArea />
+        </DashboardItem>
+      </DashboardContent>
+
+      <DashboardContent>
+        <DashboardItem title="High Value Crops Area">
           <HighValueCrops />
+        </DashboardItem>
+      </DashboardContent>
+
+      <DashboardContent>
+        <DashboardItem title="High Value Crops Area - Sub Varieties">
+          <HighValueCropsSubVariety />
         </DashboardItem>
       </DashboardContent>
 
@@ -114,7 +134,7 @@ function FarmerDashboard() {
       </DashboardContent>
 
       <DashboardContent>
-        <DashboardItem title="Fishery">
+        <DashboardItem title="Fish Pond">
           <Fishery />
         </DashboardItem>
       </DashboardContent>

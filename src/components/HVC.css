@@ -1,0 +1,9 @@
+.hvc {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.hvc-item {
+  display: flex;
+  column-gap: 1rem;
+}

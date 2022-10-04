@@ -23,6 +23,9 @@ function FarmerTabs(props) {
           <Link className="tabs-item" to="/farmers/records" getProps={isPartiallyActive}>
             <TableOfContents24 /> Records
           </Link>
+          <Link className="tabs-item" to="/farmers/map/farmers" getProps={isPartiallyActive}>
+            <Map24 /> Farmer Locations
+          </Link>
         </div>
       </div>
       <PageContent>{props.children}</PageContent>
